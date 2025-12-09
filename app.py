@@ -56,11 +56,14 @@ st.markdown(
     .admin-box {
         background: #ffffff !important;
         color: #111111 !important;
+<<<<<<< HEAD
     }
 
     /* Sidebar text (if used) */
     .css-q8sbsg, .css-1d391kg, .css-h5rgaw {
         color: #111111 !important;
+=======
+>>>>>>> 307bd6c (Fix text visibility for mobile)
     }
 
     </style>
