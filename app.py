@@ -18,7 +18,7 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* Force light mode text colours */
+    /* Force light mode & darker base text */
     html, body, [class*="css"]  {
         color: #111827 !important;
         font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -58,7 +58,7 @@ st.markdown(
 
     .top-subtitle {
         font-size: 0.9rem;
-        color: #6b7280;
+        color: #4b5563;
         margin-top: 0.25rem;
         margin-bottom: 0;
     }
@@ -153,31 +153,31 @@ st.markdown(
         }
     }
 
-    .info-block {
-        font-size: 0.86rem;
-        color: #4b5563;
+    /* Info text – make darker */
+    .info-block, .info-block div, .info-block span {
+        color: #111827 !important;
     }
 
     .info-row {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 0.15rem;
+        margin-bottom: 0.18rem;
     }
 
     .info-label {
-        font-weight: 500;
-        color: #374151;
+        font-weight: 600;
+        color: #111827;
     }
 
-    /* Admin box */
+    /* Admin box – stronger background & border */
     .admin-box {
         margin-top: 0.6rem;
         padding: 0.65rem 0.75rem 0.75rem 0.75rem;
         border-radius: 12px;
-        background: #f9fafb;
-        border: 1px dashed #d1d5db;
+        background: #ffffff !important;
+        border: 1px solid #d1d5db !important;
         font-size: 0.8rem;
-        color: #4b5563;
+        color: #111827;
     }
 
     .section-title {
@@ -188,6 +188,18 @@ st.markdown(
         display: flex;
         align-items: center;
         gap: 0.35rem;
+    }
+
+    /* Widget text & inputs – force dark text */
+    input, textarea, select {
+        color: #111827 !important;
+        background: #0f172a !important;  /* dark field, white text – matches your screenshot */
+    }
+
+    .stDateInput label, .stTimeInput label,
+    .stDateInput span, .stTimeInput span {
+        color: #111827 !important;
+        opacity: 1 !important;
     }
 
     /* Make Streamlit widgets slightly tighter */
@@ -203,13 +215,16 @@ st.markdown(
         color: #ffffff !important;
     }
 
+    .stButton {
+        margin-bottom: 1rem !important;
+    }
+
     /* Remove big top padding on mobile */
     @media (max-width: 600px) {
         div[data-testid="block-container"] {
             padding-top: 0.7rem !important;
         }
     }
-
     </style>
     """,
     unsafe_allow_html=True,
