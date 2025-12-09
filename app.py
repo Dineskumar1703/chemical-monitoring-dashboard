@@ -18,54 +18,56 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* Light background for the whole app */
+
+    /* FORCE APP INTO LIGHT MODE */
+    :root {
+        --text-color: #111111 !important;
+        --background-color: #ffffff !important;
+    }
+
+    /* Force all headings to be dark */
+    h1, h2, h3, h4, h5, h6 {
+        color: #111111 !important;
+    }
+
+    /* Force all normal text to be dark */
+    p, div, span, label, .stText, .stMarkdown {
+        color: #111111 !important;
+    }
+
+    /* Background for the main container */
     .stApp {
-        background: #f3f4f6;
+        background: #f3f4f6 !important;
     }
 
-    /* Main container card */
+    /* White container cards */
     div[data-testid="block-container"] {
-        background: #ffffff;
-        padding: 24px 32px 40px 32px;
-        border-radius: 18px;
-        box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-        color: #111827;
+        background: #ffffff !important;
+        color: #111111 !important;
     }
 
-    h1, h2, h3, h4 {
-        color: #111827;
-    }
-
-    .info-text {
-        font-size: 13px;
-        color: #4b5563;
-    }
-
-    .metric-label {
-        font-weight: 600;
-        color: #111827;
-    }
-
+    /* Card backgrounds */
     .drum-card {
-        background: #f9fafb;
-        border-radius: 16px;
-        padding: 16px 16px 20px 16px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        border: 1px solid #e5e7eb;
+        background: #ffffff !important;
+        color: #111111 !important;
     }
 
+    /* Admin box text */
     .admin-box {
-        background: #ffffff;
-        border-radius: 12px;
-        padding: 10px 12px 14px 12px;
-        border: 1px dashed #d1d5db;
-        margin-top: 8px;
+        background: #ffffff !important;
+        color: #111111 !important;
+    }
+
+    /* Sidebar text (if used) */
+    .css-q8sbsg, .css-1d391kg, .css-h5rgaw {
+        color: #111111 !important;
     }
 
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 # Auto-refresh every 5 seconds for "real-time" effect
 st_autorefresh(interval=5000, key="refresh")
