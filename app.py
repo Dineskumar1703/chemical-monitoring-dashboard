@@ -68,7 +68,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
 # Auto-refresh every 5 seconds for "real-time" effect
 st_autorefresh(interval=5000, key="refresh")
 
