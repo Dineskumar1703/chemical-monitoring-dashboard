@@ -158,6 +158,11 @@ st.markdown(
         color: #111827 !important;
     }
 
+    .info-value {
+        color: #111827 !important;
+        font-weight: 400;
+    }
+
     .info-row {
         display: flex;
         justify-content: space-between;
@@ -462,39 +467,39 @@ for col, drum in zip([col1, col2], drums):
                 f"""
                 <div class="info-row">
                     <span class="info-label">Status</span>
-                    <span>{status_text}</span>
+                    <span class="info-value">{status_text}</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">MID sensor</span>
-                    <span>{drum['mid_sensor']}</span>
+                    <span class="info-value">{drum['mid_sensor']}</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">LOW sensor</span>
-                    <span>{drum['low_sensor']}</span>
+                    <span class="info-value">{drum['low_sensor']}</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Current level</span>
-                    <span>{percent:.0f}%</span>
+                    <span class="info-value">{percent:.0f}%</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Installed on</span>
-                    <span>{installed.strftime("%Y-%m-%d %H:%M")}</span>
+                    <span class="info-value">{installed.strftime("%Y-%m-%d %H:%M")}</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Last replaced</span>
-                    <span>{replaced.strftime("%Y-%m-%d %H:%M") if replaced else "N/A"}</span>
+                    <span class="info-value">{replaced.strftime("%Y-%m-%d %H:%M") if replaced else "N/A"}</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Days in service</span>
-                    <span>{days_in_service} day(s)</span>
+                    <span class="info-value">{days_in_service} day(s)</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Usage rate</span>
-                    <span>{usage_rate:.2f} %/day</span>
+                    <span class="info-value">{usage_rate:.2f} %/day</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Estimated empty date</span>
-                    <span>{est_text}</span>
+                    <span class="info-value">{est_text}</span>
                 </div>
                 """,
                 unsafe_allow_html=True,
