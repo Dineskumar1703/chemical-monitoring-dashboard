@@ -190,10 +190,16 @@ st.markdown(
         gap: 0.35rem;
     }
 
-    /* Widget text & inputs – force dark text */
-    input, textarea, select {
-        color: #111827 !important;
-        background: #0f172a !important;  /* dark field, white text – matches your screenshot */
+    /* Widget text & inputs – light, consistent date & time fields */
+    div[data-baseweb="input"] input {
+        background: #f8fafc !important;
+        color: #0f172a !important;
+    }
+
+    div[data-baseweb="input"] {
+        background: #f8fafc !important;
+        border-radius: 8px !important;
+        border: 1px solid #cbd5e1 !important;
     }
 
     .stDateInput label, .stTimeInput label,
@@ -352,7 +358,7 @@ def render_gauge(percent: float, level: str):
             },
         )
     )
-    fig.update_layout(margin=dict(l=10, r=10, t=35, b=0), height=260)
+    fig.update_layout(margin=dict(l=10, r=10, t=50, b=10), height=280)
     st.plotly_chart(fig, use_container_width=True)
 
 # ---------------------------------------------------------
@@ -381,7 +387,6 @@ with st.container():
 any_low = any(d["level"] == "LOW" for d in drums)
 any_mid = any(d["level"] == "MID" for d in drums)
 
-status_html = ""
 if any_low:
     status_html = (
         '<div class="status-card">'
