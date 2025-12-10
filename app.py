@@ -185,6 +185,11 @@ st.markdown(
         color: #111827;
     }
 
+    /* FORCE all text inside admin box to be dark */
+    .admin-box *, .admin-box strong {
+        color: #111827 !important;
+    }
+
     .section-title {
         font-size: 1.05rem;
         font-weight: 600;
